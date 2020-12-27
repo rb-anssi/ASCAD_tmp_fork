@@ -4,11 +4,11 @@ cache: pip
 
 cache:
   directories:
-    - ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ASCAD_data/
+    - ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ASCAD_data.zip
 
 before_install:
-  # First download the database
-  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip
+  # First download and extract the database
+  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip && cd -
 
 python:
   - "3.5"
