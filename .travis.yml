@@ -62,5 +62,9 @@ script:
   # Test the trained models
   - echo -ne '\n' | python ASCAD_test_models.py STM32_AES_v2/example_test_models_params
   - echo -ne '\n' | python ASCAD_test_models.py STM32_AES_v2/example_test_models_without_permind_params
+  # Train the models
+  - (timeout 60 python ASCAD_train_models.py STM32_AES_v2/example_train_models_params; exit 0)
+  - (timeout 60 python ASCAD_train_models.py STM32_AES_v2/example_train_models_without_permind_params; exit 0)
+  
  
    
