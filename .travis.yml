@@ -48,5 +48,4 @@ script:
   - cd ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_trained_models/ && wget https://static.data.gouv.fr/resources/ascad-atmega-8515-variable-key/20190801-132406/cnn2-ascad-desync50.h5 && cd -
   # Test the models
   - echo -ne '\n' | python ASCAD_test_models.py ATMEGA_AES_v1/ATM_AES_v1_variable_key/example_test_models_params
-  - echo -ne '\n' | python ASCAD_test_models.py ATMEGA_AES_v1/ATM_AES_v1_variable_key/example_test_models_params2
   
