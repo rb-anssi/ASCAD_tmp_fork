@@ -1,5 +1,7 @@
 language: python
 
+os: focal
+
 cache: pip
 
 services:
