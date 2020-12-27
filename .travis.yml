@@ -24,4 +24,6 @@ script:
   # First download and extract the database if it has not been downloaded
   - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && rm -rf ASCAD_data && unzip ASCAD_data.zip && cd -
   # Test the database extraction
-  - python ASCAD_generate.py ATMEGA_AES_v1/ATM_AES_v1_fixed_key/example_generate_params 
+  - python ASCAD_generate.py ATMEGA_AES_v1/ATM_AES_v1_fixed_key/example_generate_params
+  # Now test the model
+  - python ASCAD_test_models.py ATMEGA_AES_v1/ATM_AES_v1_fixed_key/example_test_models_params
