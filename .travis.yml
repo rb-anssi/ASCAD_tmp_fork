@@ -19,6 +19,10 @@ matrix:
         - python: "3.9"
         - python: "nightly"
 
+before_install:
+  # NOTE: we need some swap for large numpy arrays that exceed our RAM size
+  - sudo fallocate -l 4G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && sudo sysctl vm.swappiness=10
+
 install:
   # Fix specific Python 3.6 and 3.7 tensorflow h5py dependency
   - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then pip install h5py==2.10.0; fi
