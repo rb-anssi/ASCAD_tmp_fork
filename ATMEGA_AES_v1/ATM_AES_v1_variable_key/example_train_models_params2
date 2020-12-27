@@ -1,0 +1,9 @@
+{
+"multilabel":1, 
+"ascad_database": "ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test_labeled.h5",
+"training_model": "ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_trained_models/test_model.h5",
+"network_type": "multi_test",
+#"epochs": 125,
+"epochs": 10,
+"batch_size": 64
+}

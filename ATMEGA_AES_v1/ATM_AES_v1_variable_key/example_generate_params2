@@ -1,0 +1,12 @@
+{
+"labeled_traces_file" : "ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test_labeled.h5",
+"profiling_index" : [n for n in range(0, 200)],
+"attack_index" : [n for n in range(200,250)],
+"target_points" : [n for n in range(80945, 80945+1400)],
+"profiling_desync" : 0,
+"attack_desync" : 0,
+"multilabel" : 1,
+#"traces_file" : "ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test.h5"
+"files_splitted" : 1,
+"traces_files_list" : ["ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test_part1.h5","ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test_part2.h5", "ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_databases/test_part3.h5"]
+}
