@@ -2,17 +2,6 @@ language: python
 
 cache: pip
 
-cache:
-  directories:
-    # Cached compressed database
-    - ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ASCAD_data/
-
-before_install:
-  # First download the database if it has not been downloaded
-  - if [ ! -f ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ASCAD_data.zip ]; then cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip && cd -; fi
-  # Then extract it
-  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && unzip ASCAD_data.zip && cd -
-
 python:
   - "3.5"
   - "3.6"
@@ -31,5 +20,10 @@ install:
   - pip install keras numpy h5py matplotlib tensorflow tqdm
 
 script:
+  #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
+  # First download the database if it has not been downloaded
+  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip && cd -
+  # Then extract it
+  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && unzip ASCAD_data.zip && cd -
   # Test the database extraction
   - python ASCAD_generate.py ATMEGA_AES_v1/ATM_AES_v1_fixed_key/example_generate_params 
