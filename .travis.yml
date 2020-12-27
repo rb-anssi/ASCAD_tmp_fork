@@ -12,7 +12,7 @@ python:
 
 matrix:
     allow_failures:
-        - python: "nightly"
+        - python: "3.9" "nightly" # tensorflow only supports Python 3.5 to 3.8 for now
 
 install:
   - pip install keras numpy h5py matplotlib tensorflow tqdm
