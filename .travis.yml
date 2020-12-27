@@ -1,0 +1,24 @@
+langiuage: python
+
+cache: pip
+
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
+  - "nightly"  # nightly build
+
+matrix:
+    allow_failures:
+        - python: "nightly"
+
+install:
+  - pip install keras numpy h5py matplotlib tensorflow tqdm
+
+script:
+  # Test our scripts
+  # First download the database
+  - cd ASCAD/ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip
