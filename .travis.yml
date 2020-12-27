@@ -2,8 +2,6 @@ language: python
 
 os: focal
 
-cache: pip
-
 services:
   - xvfb
 
@@ -22,7 +20,7 @@ matrix:
         - python: "nightly"
 
 install:
-  - pip install keras matplotlib tensorflow tqdm
+  - pip install keras numpy h5py matplotlib tensorflow tqdm
 
 script:
   #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
