@@ -22,7 +22,7 @@ install:
 script:
   #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
   # First download the database if it has not been downloaded
-  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && unzip ASCAD_data.zip && cd -
+  - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && rm -rf ASCAD_data && unzip ASCAD_data.zip && cd -
   # Then extract it
   - cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && unzip ASCAD_data.zip && cd -
   # Test the database extraction
