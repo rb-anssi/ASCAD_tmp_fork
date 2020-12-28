@@ -15,4 +15,3 @@ cd ATMEGA_AES_v1/ATM_AES_v1_variable_key/ASCAD_data/ASCAD_trained_models/ && wge
 echo -ne '\n' | python ASCAD_test_models.py ATMEGA_AES_v1/ATM_AES_v1_variable_key/example_test_models_params
 # Train the models
 (timeout 60 python ASCAD_train_models.py ATMEGA_AES_v1/ATM_AES_v1_variable_key/example_train_models_params; exit 0)
-
