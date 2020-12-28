@@ -30,11 +30,10 @@ install:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then pip install h5py==2.10.0; fi
   - pip install keras numpy h5py matplotlib tensorflow tqdm
 
-jobs:
-  include:
-    - stage: ATM_AES_v1_fixed_key
-      script: sh test_ATM_AES_v1_fixed_key.sh
-    - stage: ATM_AES_v1_variable_key
-      script: sh test_ATM_AES_v1_variable_key.sh
-    - stage: STM32_AES_v2
-      script: sh test_STM32_AES_v2.sh
+script:
+  #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
+  - sh test_ATM_AES_v1_fixed_key.sh
+  #### Testing ATMEGA_AES_v1/ATM_AES_v1_variable_key/
+  - sh test_ATM_AES_v1_variable_key.sh
+  #### Testing STM32_AES_v2/
+  - sh test_STM32_AES_v2.sh
