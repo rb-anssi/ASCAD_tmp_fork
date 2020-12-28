@@ -21,6 +21,7 @@ matrix:
 
 before_install:
   # NOTE: we need some swap for large numpy arrays that exceed our RAM size
+  # (current Travis instances have only 8 GB of physical RAM)
   - sudo fallocate -l 16G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && sudo sysctl vm.swappiness=100
 
 install:
@@ -67,8 +68,9 @@ script:
   - echo -ne '\n' | python ASCAD_test_models.py STM32_AES_v2/example_test_models_params
   - echo -ne '\n' | python ASCAD_test_models.py STM32_AES_v2/example_test_models_without_permind_params
   # Train the models
-  - (timeout 60 python ASCAD_train_models.py STM32_AES_v2/example_train_models_params; exit 0)
-  - (timeout 60 python ASCAD_train_models.py STM32_AES_v2/example_train_models_without_permind_params; exit 0)
+  # NOTE: large timeout to allow for swap ...
+  - (timeout 600 python ASCAD_train_models.py STM32_AES_v2/example_train_models_params; exit 0)
+  - (timeout 600 python ASCAD_train_models.py STM32_AES_v2/example_train_models_without_permind_params; exit 0)
   
  
    
