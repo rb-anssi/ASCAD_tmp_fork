@@ -34,7 +34,8 @@ jobs:
   include:
     - stage: ATM_AES_v1_fixed_key
       name: "ATM_AES_v1_fixed_key"
-      script: -|
+      script:
+        - |
         #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
         # First download and extract the database if it has not been downloaded
         cd ATMEGA_AES_v1/ATM_AES_v1_fixed_key/ && wget https://www.data.gouv.fr/s/resources/ascad/20180530-163000/ASCAD_data.zip && rm -rf ASCAD_data && unzip ASCAD_data.zip && cd -
@@ -46,7 +47,8 @@ jobs:
         (timeout 60 python ASCAD_train_models.py ATMEGA_AES_v1/ATM_AES_v1_fixed_key/example_train_models_params; exit 0)
     - stage: ATM_AES_v1_variable_key
       name: "ATM_AES_v1_variable_key"
-      script: -|
+      script:
+        - |
         #### Testing ATMEGA_AES_v1/ATM_AES_v1_variable_key/
         # First download elements
         # Download the extracted databases
@@ -64,7 +66,8 @@ jobs:
         (timeout 60 python ASCAD_train_models.py ATMEGA_AES_v1/ATM_AES_v1_variable_key/example_train_models_params; exit 0)
     - stage: STM32_AES_v2
       name: "STM32_AES_v2"
-      script: -|
+      script:
+        - |
         #### Testing STM32_AES_v2/
         # First download elements
         # Download the extracted databases
