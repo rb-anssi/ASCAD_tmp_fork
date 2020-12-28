@@ -80,5 +80,5 @@ script:
   - if [ "${STM32_AES_v2}" == 1 ]; then echo -ne '\n' | python ASCAD_test_models.py STM32_AES_v2/example_test_models_without_permind_params; fi
   # Train the models
   # NOTE: large timeout to allow for swap ...
-  - if [ "${STM32_AES_v2}" == 1 ]; then (timeout 600 python ASCAD_train_models.py STM32_AES_v2/example_train_models_params; exit 0); fi
-  - if [ "${STM32_AES_v2}" == 1 ]; then (timeout 600 python ASCAD_train_models.py STM32_AES_v2/example_train_models_without_permind_params; exit 0); fi
+  - if [ "${STM32_AES_v2}" == 1 ]; then (timeout 800 python ASCAD_train_models.py STM32_AES_v2/example_train_models_params; exit 0); fi
+  - if [ "${STM32_AES_v2}" == 1 ]; then (timeout 800 python ASCAD_train_models.py STM32_AES_v2/example_train_models_without_permind_params; exit 0); fi
