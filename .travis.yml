@@ -5,6 +5,11 @@ os: focal
 services:
   - xvfb
 
+env:
+  - ATM_AES_v1_fixed_key=1 ATM_AES_v1_variable_key=0 STM32_AES_v2=0
+  - ATM_AES_v1_fixed_key=0 ATM_AES_v1_variable_key=1 STM32_AES_v2=0
+  - ATM_AES_v1_fixed_key=0 ATM_AES_v1_variable_key=0 STM32_AES_v2=1
+
 python:
   - "3.5"
   - "3.6"
@@ -32,8 +37,8 @@ install:
 
 script:
   #### Testing ATMEGA_AES_v1/ATM_AES_v1_fixed_key/
-  - sh test_ATM_AES_v1_fixed_key.sh
+  - if [ "${ATM_AES_v1_fixed_key}" == 1 ]; then sh test_ATM_AES_v1_fixed_key.sh; fi
   #### Testing ATMEGA_AES_v1/ATM_AES_v1_variable_key/
-  - sh test_ATM_AES_v1_variable_key.sh
+  - if [ "${ATM_AES_v1_variable_key}" == 1 ]; then sh test_ATM_AES_v1_variable_key.sh; fi
   #### Testing STM32_AES_v2/
-  - sh test_STM32_AES_v2.sh
+  - if [ "${STM32_AES_v2}" == 1 ]; then sh test_STM32_AES_v2.sh; fi
